@@ -34,9 +34,15 @@ $(document).ready(function(){
                 if(response==="ok"){
                     setTimeout(' window.location.href = "'+window.location.href+'"; ',0);
                 }
+                else if(response==="Login Added")
+                {
+                    $("#error").fadeIn(0, function(){ 
+                        $("#error").html('<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> '+response+' </div>');
+                    });
+                }
                 else{
                     $("#error").fadeIn(0, function(){      
-                        $("#error").html('<div class="alert alert-danger"> '+response+' </div>');
+                        $("#error").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> '+response+' </div>');
                     });
                 }
             }
